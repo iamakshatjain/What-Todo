@@ -1,6 +1,6 @@
 # What-Todo
 
-Made with React by [Akshat Jain](https://linkedin/in/iamakshtjain)
+Made with React by [Akshat Jain](https://www.linkedin.com/in/iamakshtjain)
 
 A simple todolist with following features :
 
