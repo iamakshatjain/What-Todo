@@ -6,6 +6,9 @@ import Completed from "../Screens/Completed";
 import All  from "../Screens/All";
 import Todos  from "../Screens/Todos";
 
+// styles
+import "../styles/output.css";
+
 // history for router
 import history from "../history";
 

@@ -13,7 +13,7 @@ class Completed extends React.Component{
         return(
             <>
                 <TaskInput />
-                <h1>Completed</h1>
+                <h1 className="font-sans text-3xl text-gray-800 text-center">Completed</h1>
                 <List type="COMPLETED"/>
             </>
         )

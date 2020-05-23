@@ -13,7 +13,7 @@ class Todos extends React.Component{
         return(
             <>
                 <TaskInput />
-                <h1>Todo</h1>
+                <h1 className="font-sans text-3xl text-gray-800 text-center">Todo</h1>
                 <List type="TODO"/>
             </>
         )
