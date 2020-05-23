@@ -18,6 +18,8 @@ class App extends React.Component{
                         <Route path="/todos" exact component={Todos} />
                         <Route path="/todos/all" exact component={All} />
                         <Route path="/todos/completed" exact component={Completed} />
+                        
+                        {/* to redirect intially to /todos */}
                         <Redirect from="*" to="/todos" /> 
                     </Switch>
                 </Router>
