@@ -12,7 +12,7 @@ export default (state = [], action) => {
             return state_copy.filter((completed_task) => completed_task.task !== action.payload.task);
         case CREATE_COMPLETED : 
             state_copy = [...state];
-            state_copy.unshift(action.payload);
+            state_copy.unshift({ ...action.payload, done : true });
             return state_copy;
         default:
             return state;

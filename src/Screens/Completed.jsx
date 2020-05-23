@@ -2,7 +2,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {create_todo} from "../Actions";
+import {create_todo, delete_todo, create_completed, delete_completed} from "../Actions";
 import List from "../Components/List";
 import TaskInput from "../Components/TaskInput";
 
@@ -14,14 +14,10 @@ class Completed extends React.Component{
             <>
                 <TaskInput />
                 <h1>Completed</h1>
-                <List list={this.props.list}/>
+                <List type="COMPLETED"/>
             </>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return {list : state.completed}
-}
-
-export default connect(mapStateToProps, {create_todo})(Completed);
+export default connect(null, {create_todo, delete_todo, create_completed, delete_completed})(Completed);

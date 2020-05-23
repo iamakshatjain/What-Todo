@@ -12,7 +12,7 @@ export default (state = [], action) => {
             return state_copy.filter((todo) => todo.task !== action.payload.task);
         case CREATE_TODO : 
             state_copy = [...state];
-            state_copy.unshift(action.payload);
+            state_copy.unshift({ ...action.payload, done : false });
             return state_copy;
         default:
             return state;
