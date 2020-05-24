@@ -1,9 +1,9 @@
 # What-Todo
 
+A simple and easy to use TO-DO List application
 Made with React by [Akshat Jain](https://www.linkedin.com/in/iamakshtjain)
 
-A simple todolist with following features :
-
+## Features :
 - Prioritization of task
 - Seperate columns for All, Completed, Pending Tasks
 - Fast and Fluent User Experience
@@ -18,21 +18,34 @@ A simple todolist with following features :
 ### Completed Routes
 - CREATE - `/c` - POST : To create a new completed task
     - Success Response : `{ id : <ID of inserted task> }`
+
 - READ - `/c` - GET : To get all the completed tasks
+    - Success Response : `[{ <todo> }]`
+
 - UPDATE - `/c/:id` - POST/PUT : To update completed task with ID as `id`
+    - Success Response : `{ id : <ID of updated todo> }`
+
 - DELETE - `/c/:id` - DELETE : To delete completed task with ID as `id`
+    - Success Response : `{ id : <ID of deleted todo> }`
 
 ### Todos Routes
 - CREATE - `/t` - POST : To create a new todo task
     - Success Response : `{ id : <ID of inserted task> }`
+
 - READ - `/t` - GET : To get all the todo tasks
     - Success Response : `[{ <task> }]`
+
 - UPDATE - `/t/:id` - POST/PUT : To update todo task with ID as `id`
+    - Success Response : `{ id : <ID of updated task> }`
+
 - DELETE - `/t/:id` - DELETE : To delete todo task with ID as `id`
+    - Success Response : `{ id : <ID of deleted task> }`
 
 *Error Response : `{ error : <error message> }`*
 
 ## Database (Postgres)
+
+Hosted with free instance of [ElephantSQL](https://www.elephantsql.com/)
 
 whattodo : Database Name
 
