@@ -1,8 +1,8 @@
 // essentials
 import React from 'react';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
 
-import {create_todo, delete_todo, create_completed, delete_completed} from "../Actions";
+import {fetch_completed, fetch_todos} from "../Actions";
 import List from "../Components/List";
 import TaskInput from "../Components/TaskInput";
 
@@ -30,6 +30,11 @@ class All extends React.Component{
             completed_at : null
         });
     }
+
+    // componentDidMount(){
+    //     this.props.fetch_completed();
+    //     this.props.fetch_todos();
+    // }
     
     render(){
 
@@ -45,4 +50,5 @@ class All extends React.Component{
     }
 }
 
-export default connect(null, {create_todo, delete_todo, create_completed, delete_completed})(All);
+// export default connect(null, {fetch_completed, fetch_todos})(All);
+export default All;

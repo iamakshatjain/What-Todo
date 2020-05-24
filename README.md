@@ -45,3 +45,6 @@ whattodo : Database Name
         - The `done` variable must be `NOT NULL` and `true`
         - The `completed_at` variable must be `NOT NULL`
 
+## Network Optimisation
+- Request for getting tasks is made only once when the app loads 
+

@@ -1,12 +1,15 @@
 import {
 DELETE_COMPLETED
-,CREATE_COMPLETED
+,CREATE_COMPLETED,
+FETCH_COMPLETED
 } from "../Actions/types";
 
 
 export default (state = [], action) => {
     var state_copy = [...state];
     switch(action.type){
+        case FETCH_COMPLETED :
+            return [...action.payload];
         case DELETE_COMPLETED : 
             state_copy = [...state];
             return state_copy.filter((completed_task) => completed_task.task !== action.payload.task);

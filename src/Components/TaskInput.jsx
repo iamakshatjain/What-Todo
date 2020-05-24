@@ -46,7 +46,6 @@ class TaskInput extends React.Component{
 
         // immutability
         let todo = { ...this.state, created_at : new Date()};
-        console.log(todo);
         this.props.create_todo(todo);
 
         this.setState({

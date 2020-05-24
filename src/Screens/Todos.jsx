@@ -2,14 +2,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {create_todo, delete_todo, create_completed, delete_completed} from "../Actions";
+import {fetch_todos} from "../Actions";
 import List from "../Components/List";
 import TaskInput from "../Components/TaskInput";
 
 // Renders the list of all the todos that are pending
 class Todos extends React.Component{
-    render(){
+    
+    // componentDidMount(){
+    //     this.props.fetch_todos();
+    // }
 
+    render(){
         return(
             <>
                 <TaskInput />
@@ -20,4 +24,5 @@ class Todos extends React.Component{
     }
 }
 
-export default connect(null, {create_todo, delete_todo, create_completed, delete_completed})(Todos);
+// export default connect(null, {fetch_todos})(Todos);
+export default Todos;

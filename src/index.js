@@ -18,6 +18,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // creating state store for redux
 const store = createStore(reducers, composeEnhancers(applyMiddleware(ReduxThunk)));
 
+// console.log(ReduxThunk);
+// const store = createStore(reducers, applyMiddleware(ReduxThunk));
 
 ReactDOM.render(
     <Provider store={store}>
