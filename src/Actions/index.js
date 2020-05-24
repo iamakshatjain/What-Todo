@@ -5,6 +5,8 @@ DELETE_TODO
 ,DELETE_COMPLETED
 ,CREATE_COMPLETED
 ,FETCH_COMPLETED
+,UPDATE_STATE
+,CLEAR_STATE
 } from "./types";
 
 import axios from 'axios';
@@ -68,5 +70,19 @@ export const fetch_completed = () => async dispatch => {
     dispatch({
         type : FETCH_COMPLETED,
         payload : response.data
+    });
+}
+
+//Current State
+export const update_current_state = (todo) => {
+    return ({
+        type : UPDATE_STATE,
+        payload : todo
+    });
+}
+
+export const clear_current_state = (todo) => {
+    return ({
+        type : CLEAR_STATE
     });
 }

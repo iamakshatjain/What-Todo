@@ -1,7 +1,7 @@
 // essentials
 import React from 'react';
 import {connect} from 'react-redux';
-import {create_todo, delete_todo, create_completed, delete_completed} from "../Actions";
+import {create_todo, delete_todo, create_completed, delete_completed, update_current_state} from "../Actions";
 
 import nothing from "../Assets/nothing.svg";
 
@@ -44,6 +44,18 @@ class List extends React.Component{
         }
     }
 
+    handleEditTask = (index) => {
+        var task;
+        if(this.props.type === "COMPLETED"){
+            return;
+        }
+        else{
+            task = this.props.todos[index];
+            this.props.delete_todo(task);
+            this.props.update_current_state(task);
+        }
+    }
+
     getColor = task => {
         let priorityColors = ["text-red-500", "text-yellow-500", "text-blue-500", "text-green-500"] ;
         if(task.done){
@@ -78,6 +90,8 @@ class List extends React.Component{
                                 <input type="checkbox" checked={ele.done} onChange={e => this.handleCheckbox(e, index)}/>
                                 <span  className={`font-sans text-2xl ${this.getColor(ele)} px-3`}>{ele.task}</span>
                                 <span style={{float:'right'}} onClick = {() => this.handleDeleteTask(index)} className = "content-end text-red-500 hover:text-red-800 cursor-pointer">Delete</span>
+                                <span style={{float:'right', display : (this.props.type === "COMPLETED")?"none":"inline-block"}} onClick = {() => this.handleEditTask(index)} className = "content-end text-blue-500 hover:text-blue-800 cursor-pointer mx-2">Edit</span>
+                                    
                             </li> 
                         </div>
                     ))}
@@ -99,4 +113,4 @@ const mapStateToProps = (state) => {
     return {todos : state.todos, completed : state.completed}
 }
 
-export default connect(mapStateToProps, {create_todo, delete_todo, create_completed, delete_completed})(List);
+export default connect(mapStateToProps, {create_todo, delete_todo, create_completed, delete_completed, update_current_state})(List);

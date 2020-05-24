@@ -11,6 +11,7 @@ A simple todolist with following features :
 ## Handled Test Cases
 - Can't create multiple todos with same task
 - Can't create empty todo
+- Can't update completed task directly
 
 ## API Description
 
